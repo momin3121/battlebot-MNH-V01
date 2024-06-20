@@ -13,11 +13,15 @@
 ## Introduction
 The "battlebot-MNH-V01" is a custom-built battle bot designed for high performance in competitive environments. This bot combines precision engineering and robust construction to achieve high mobility and effective combat capabilities.
 
+![Battle Bot](preview.JPG)
+
 ## Design Overview
 ### Frame Construction
 - **Material:** Aluminum
 - **Construction:** The frame serves as the skeleton, providing a sturdy yet lightweight base. It includes reinforcements at critical stress points to prevent deformation during combat.
 - **Benefits:** The use of aluminum and 3D-printed components allows for rapid prototyping and customization, ensuring flexibility and cost-effectiveness.
+
+![Frame Construction](Detailed Overhead View.JPG)
 
 ### Weight and Dimensions
 - **Total Weight:** 3 kg
