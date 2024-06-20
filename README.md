@@ -23,17 +23,21 @@ The "battlebot-MNH-V01" is a custom-built battle bot designed for high performan
 
 ![Frame Construction](Detailed-Overhead-View.JPG)
 
+![Frame Construction](Detailed-Overhead-View.JPG)
+
 ### Weight and Dimensions
 - **Total Weight:** 3 kg
 - **Overall Dimensions:** 21 cm x 20 cm
 
-## Weapon System
+## Tool System
 ### Integration
 - **Primary Weapon:** A centrally mounted spinning blade made from hardened steel.
 - **Motor:** High-torque electric motor.
 - **Specifications:**
   - **Spin Rate:** Up to 5000 RPM
   - **Impact Resistance:** Designed for high durability and easy field repairs.
+
+![Frame Construction](Detailed-Overhead-View.JPG)
 
 ## Electrical Components
 ### Key Components
@@ -55,9 +59,11 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Dimensions:** 10 cm x 9.5 cm
 - **Layers:** 2-layer design for efficient routing of power and signal traces.
 
+![Frame Construction](Detailed-Overhead-View.JPG)
+
 ### Trace Widths
 - **Motor Traces:** 0.8 mm (for currents up to 2A)
-- **Weapon Motor Traces:** 2.5 mm (for currents up to 10A)
+- **Tool  Motor Traces:** 2.5 mm (for currents up to 10A)
 - **Design Standards:** Trace widths are calculated based on IPC-2221 standards to handle the expected current loads with an allowable temperature rise of 10°C to 20°C.
 
 ### Key Components
@@ -77,6 +83,8 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Connectors (J1, J2, J3, J4, J5, J6):** Provide interfaces for external connections to motors, power sources, and other peripherals.
 - **Switch (SW1):** Used to enable the microcontroller, typically controlling the power state or activation of the system.
 
+![Frame Construction](Detailed-Overhead-View.JPG)
+
 ### Power Management
 - **AMS1117-3.3 Voltage Regulator (U6):**
   - **Function:** Provides a stable 3.3V output for low-power devices.
@@ -95,6 +103,8 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Trace Width:** Motor traces are designed to handle high currents without excessive heat buildup or voltage drop.
 - **Via Optimization:** Used to connect traces between the top and bottom layers, enhancing electrical performance.
 - **Accessibility:** All connectors and critical components are easily accessible for maintenance and troubleshooting.
+
+![Frame Construction](Detailed-Overhead-View.JPG)
 
 ## References
 1. [High Power DC Motor](https://www.amazon.com/Power-12V-24V-Torque-Bearing-Driver/dp/B086Z47DLJ)
