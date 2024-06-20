@@ -5,7 +5,7 @@
 2. [Design Overview](#design-overview)
 3. [Weight and Dimensions](#weight-and-dimensions)
 4. [Frame Construction](#frame-construction)
-5. [Weapon System](#weapon-system)
+5. [tool System](#tool-system)
 6. [Electrical Components](#electrical-components)
 7. [PCB Design](#pcb-design)
 8. [References](#references)
@@ -23,7 +23,7 @@ The "battlebot-MNH-V01" is a custom-built battle bot designed for high performan
 
 ![Frame Construction](Detailed-Overhead-View.JPG)
 
-![Frame Construction](Detailed-Overhead-View.JPG)
+![Frame Construction](Detailed-downhead-View.JPG)
 
 ### Weight and Dimensions
 - **Total Weight:** 3 kg
@@ -37,7 +37,7 @@ The "battlebot-MNH-V01" is a custom-built battle bot designed for high performan
   - **Spin Rate:** Up to 5000 RPM
   - **Impact Resistance:** Designed for high durability and easy field repairs.
 
-![Frame Construction](Detailed-Overhead-View.JPG)
+![Frame Construction](close-look-to-the-tool-mechanism.JPG)
 
 ## Electrical Components
 ### Key Components
@@ -59,7 +59,7 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Dimensions:** 10 cm x 9.5 cm
 - **Layers:** 2-layer design for efficient routing of power and signal traces.
 
-![Frame Construction](Detailed-Overhead-View.JPG)
+![Frame Construction](PCB-3d-layout.png)
 
 ### Trace Widths
 - **Motor Traces:** 0.8 mm (for currents up to 2A)
@@ -83,7 +83,7 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Connectors (J1, J2, J3, J4, J5, J6):** Provide interfaces for external connections to motors, power sources, and other peripherals.
 - **Switch (SW1):** Used to enable the microcontroller, typically controlling the power state or activation of the system.
 
-![Frame Construction](Detailed-Overhead-View.JPG)
+![Frame Construction](schematic-deisgn.pdf)
 
 ### Power Management
 - **AMS1117-3.3 Voltage Regulator (U6):**
@@ -104,7 +104,7 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Via Optimization:** Used to connect traces between the top and bottom layers, enhancing electrical performance.
 - **Accessibility:** All connectors and critical components are easily accessible for maintenance and troubleshooting.
 
-![Frame Construction](Detailed-Overhead-View.JPG)
+![Frame Construction](PCB-design.png)
 
 ## References
 1. [High Power DC Motor](https://www.amazon.com/Power-12V-24V-Torque-Bearing-Driver/dp/B086Z47DLJ)
