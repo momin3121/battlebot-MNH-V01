@@ -21,7 +21,7 @@ The "battlebot-MNH-V01" is a custom-built battle bot designed for high performan
 - **Construction:** The frame serves as the skeleton, providing a sturdy yet lightweight base. It includes reinforcements at critical stress points to prevent deformation during combat.
 - **Benefits:** The use of aluminum and 3D-printed components allows for rapid prototyping and customization, ensuring flexibility and cost-effectiveness.
 
-![Frame Construction](Detailed Overhead View.JPG)
+![Frame Construction](Detailed-Overhead-View.JPG)
 
 ### Weight and Dimensions
 - **Total Weight:** 3 kg
