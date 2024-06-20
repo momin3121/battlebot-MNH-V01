@@ -83,7 +83,7 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 - **Connectors (J1, J2, J3, J4, J5, J6):** Provide interfaces for external connections to motors, power sources, and other peripherals.
 - **Switch (SW1):** Used to enable the microcontroller, typically controlling the power state or activation of the system.
 
-![Frame Construction](schematic-deisgn.pdf)
+![Frame Construction](schematic-deisgn.png)
 
 ### Power Management
 - **AMS1117-3.3 Voltage Regulator (U6):**
