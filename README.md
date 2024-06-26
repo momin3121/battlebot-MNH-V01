@@ -112,37 +112,32 @@ The PCB (Printed Circuit Board) for the battle bot is designed to control all ma
 #include <ESP32Servo.h>
 #include <FlySkyIBus.h>
 
-// Motor driver pin definitions
-const int enA1Pin = 13; // PWM channel 0
+const int enA1Pin = 13; 
 const int in1_1Pin = 12;
 const int in2_1Pin = 16;
-const int enB1Pin = 10; // PWM channel 1
+const int enB1Pin = 10; 
 const int in3_1Pin = 17;
 const int in4_1Pin = 9;
 
-const int enA2Pin = 33; // PWM channel 2
+const int enA2Pin = 33; 
 const int in1_2Pin = 32;
 const int in2_2Pin = 25;
-const int enB2Pin = 27; // PWM channel 3
+const int enB2Pin = 27; 
 const int in3_2Pin = 26;
 const int in4_2Pin = 14;
 
-const int enBPin = 35; // PWM channel 4
+const int enBPin = 35; 
 const int inBPin = 5;
 const int inAPin = 22;
-const int pwmPin = 23;  // PWM channel 5
+const int pwmPin = 23;  
 
-// Gun motor pin definition
-const int gunMotorPin = 19; // PWM channel 6
+const int gunMotorPin = 19; 
 
-// Enable switch pin definition
 const int enableSwitchPin = 9;
 
-// PWM frequency and resolution
 const int pwmFreq = 5000;
 const int pwmResolution = 8;
 
-// Receiver channel mappings
 const int ch1 = 0; // Throttle
 const int ch2 = 1; // Steering
 const int ch3 = 2; // Strafing
@@ -150,11 +145,9 @@ const int ch4 = 3; // Rotation
 const int ch5 = 4; // Gun control
 
 void setup() {
-  // Initialize serial communication
   Serial.begin(115200);
   IBus.begin(Serial1, 115200);
   
-  // Set up PWM channels
   ledcSetup(0, pwmFreq, pwmResolution);
   ledcSetup(1, pwmFreq, pwmResolution);
   ledcSetup(2, pwmFreq, pwmResolution);
@@ -163,7 +156,6 @@ void setup() {
   ledcSetup(5, pwmFreq, pwmResolution);
   ledcSetup(6, pwmFreq, pwmResolution);
 
-  // Attach the PWM channels to the motor pins
   ledcAttachPin(enA1Pin, 0);
   ledcAttachPin(enB1Pin, 1);
   ledcAttachPin(enA2Pin, 2);
@@ -171,7 +163,6 @@ void setup() {
   ledcAttachPin(gunMotorPin, 4);
   ledcAttachPin(pwmPin, 5);
 
-  // Set motor control pins as outputs
   pinMode(in1_1Pin, OUTPUT);
   pinMode(in2_1Pin, OUTPUT);
   pinMode(in3_1Pin, OUTPUT);
@@ -183,42 +174,35 @@ void setup() {
   pinMode(inBPin, OUTPUT);
   pinMode(inAPin, OUTPUT);
   
-  // Set enable switch pin as input
   pinMode(enableSwitchPin, INPUT);
 }
 
 void loop() {
-  // Read the state of the enable switch
   bool isEnabled = digitalRead(enableSwitchPin);
 
   if (isEnabled) {
-    // Read the channels from the FlySky receiver
     int throttle = IBus.readChannel(ch1);
     int steering = IBus.readChannel(ch2);
     int strafe = IBus.readChannel(ch3);
     int rotation = IBus.readChannel(ch4);
     int gunControl = IBus.readChannel(ch5);
 
-    // Map the receiver values to PWM values (0-255)
     throttle = map(throttle, 1000, 2000, -255, 255);
     steering = map(steering, 1000, 2000, -255, 255);
     strafe = map(strafe, 1000, 2000, -255, 255);
     rotation = map(rotation, 1000, 2000, -255, 255);
     gunControl = map(gunControl, 1000, 2000, 0, 255);
 
-    // Calculate the motor speeds for mecanum wheels
     int motor1Speed = throttle + steering + strafe - rotation;
     int motor2Speed = throttle - steering - strafe - rotation;
     int motor3Speed = throttle - steering + strafe + rotation;
     int motor4Speed = throttle + steering - strafe + rotation;
 
-    // Constrain the motor speeds to PWM range (0-255)
     motor1Speed = constrain(motor1Speed, 0, 255);
     motor2Speed = constrain(motor2Speed, 0, 255);
     motor3Speed = constrain(motor3Speed, 0, 255);
     motor4Speed = constrain(motor4Speed, 0, 255);
 
-    // Write the PWM values to the motor drivers
     ledcWrite(0, motor1Speed);
     ledcWrite(1, motor2Speed);
     ledcWrite(2, motor3Speed);
@@ -226,7 +210,6 @@ void loop() {
     ledcWrite(4, gunControl);
     ledcWrite(5, gunControl);
 
-    // Set motor direction pins
     digitalWrite(in1_1Pin, motor1Speed > 0);
     digitalWrite(in2_1Pin, motor1Speed < 0);
     digitalWrite(in3_1Pin, motor2Speed > 0);
@@ -236,7 +219,6 @@ void loop() {
     digitalWrite(inAPin, gunControl > 0);
     digitalWrite(inBPin, gunControl < 0);
 
-    // Print values to the serial monitor for debugging
     Serial.print("Throttle: "); Serial.print(throttle);
     Serial.print(" Steering: "); Serial.print(steering);
     Serial.print(" Strafe: "); Serial.print(strafe);
