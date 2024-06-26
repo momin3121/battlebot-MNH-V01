@@ -138,11 +138,11 @@ const int enableSwitchPin = 9;
 const int pwmFreq = 5000;
 const int pwmResolution = 8;
 
-const int ch1 = 0; // Throttle
-const int ch2 = 1; // Steering
-const int ch3 = 2; // Strafing
-const int ch4 = 3; // Rotation
-const int ch5 = 4; // Gun control
+const int ch1 = 0; 
+const int ch2 = 1; 
+const int ch3 = 2; 
+const int ch4 = 3; 
+const int ch5 = 4; 
 
 void setup() {
   Serial.begin(115200);
@@ -225,7 +225,6 @@ void loop() {
     Serial.print(" Rotation: "); Serial.print(rotation);
     Serial.print(" Gun: "); Serial.println(gunControl);
   } else {
-    // If the enable switch is off, stop all motors
     ledcWrite(0, 0);
     ledcWrite(1, 0);
     ledcWrite(2, 0);
